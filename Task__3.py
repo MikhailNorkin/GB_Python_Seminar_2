@@ -8,10 +8,11 @@ from math import pi
 import decimal
 
 def main():
+    decimal.getcontext().prec = 48
     diameter = int(input('Введите диаметр круга '))
-    decimal.getcontext().prec = 42
-    print('Длина круга будет равна ', decimal.Decimal(diameter * pi))
-    print('Площадь круга равна ', decimal.Decimal(pi * diameter**2 / 4))
+    PI = decimal.Decimal(pi)
+    print('Длина круга будет равна ', decimal.Decimal(round(diameter * PI, 42 )))
+    print('Площадь круга равна ', decimal.Decimal(round(PI * diameter**2 / 4,42)))
 
 if __name__ == "__main__":
     main()
